@@ -9,8 +9,7 @@ module tiko_plate(height=1)
     for(i=[0:2])
       rotate([0,0,i*120])
         translate([0,61,0])
-          linear_extrude(height)
-            circle(31.8);
+          cylinder(height,31.8);
   }
 }
 
