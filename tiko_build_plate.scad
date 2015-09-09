@@ -1,5 +1,6 @@
 // based on the MakerBot Build Plate Library at http://www.thingiverse.com/thing:44094
 
+cube([20,20,20]);
 tiko_build_plate();
 
 module tiko_plate(height=1)
@@ -9,7 +10,7 @@ module tiko_plate(height=1)
     for(i=[0:2])
       rotate([0,0,i*120])
         translate([0,61,0])
-          cylinder(h=height,r=31.8);
+          cylinder(h=height,r=31.8,center=true);
   }
 }
 
@@ -19,13 +20,11 @@ module tiko_build_plate()
   %union()
   {
     translate([0, 0,-.52])
-    {
       tiko_plate();
-    }
 
     difference()
     {
-      union()
+      translate([0,0,-.5])
       {
         for(i = [-8:8])
         {
@@ -40,8 +39,8 @@ module tiko_build_plate()
       }
       difference()
       {
-        cube([170,191,4],center=true);
-        tiko_plate(5);
+        cube([170,191,3],center=true);
+        tiko_plate(4);
       }
     }
   }
