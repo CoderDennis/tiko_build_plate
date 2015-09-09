@@ -16,7 +16,7 @@ module tiko_plate(height=1)
 
 module tiko_build_plate()
 {
-  #circle(62.5);
+  //#circle(62.5);
   %union()
   {
     translate([0, 0,-.52])
